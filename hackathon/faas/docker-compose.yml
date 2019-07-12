@@ -1,0 +1,8 @@
+version: '2.4'
+services:
+ do:
+  container_name: ubuntu
+  image: ubuntu
+  entrypoint: 
+   - 'sleep'
+   - '120'

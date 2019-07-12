@@ -1,0 +1,14 @@
+{
+      "DNS": {
+           "status": "active",
+           "image_src": "",
+           "docker-compose_config": "json format file, convert to yaml at runtime",
+           "docker-compose_start_params": "optional"        
+      },
+      "Smart-Home": {
+           "status": "inactive",
+           "image_src": "",
+           "docker-compose_config": "json format file, convert to yaml at runtime",
+           "docker-compose_start_params": "optional"        
+      }
+}

@@ -1,0 +1,12 @@
+version: '2.4'
+services:
+ app:
+  container_name: home-assistant
+  image: homeassistant/home-assistant
+  ports:
+   - '8123:8123'
+  volumes:
+   - '/etc/localtime:/etc/localtime:ro'
+  restart: always
+  dns: 0.0.0.0
+    
