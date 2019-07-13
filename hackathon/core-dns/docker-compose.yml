@@ -4,9 +4,7 @@ services:
   container_name: coredns
   image: coredns/coredns
   ports:
-   - '53:53/udp'
-  volumes:
-   - ~debashish/coredns/Corefile:/etc/coredns/Corefile
+   - '53:53/udp'  
   restart: always
   privileged: true
   cpu_count: 1
