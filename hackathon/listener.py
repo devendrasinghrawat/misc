@@ -6,7 +6,7 @@ import subprocess
 app = Flask(__name__)
 #api = Api(app)
 basePath = '/var/edge/'
-data = [];
+
 
 @app.route('/')
 def base():
@@ -20,6 +20,7 @@ def get(subServiceName):
 
 @app.route('/subservice/<subServiceName>', methods=['POST'])
 def create(subServiceName):
+        data = []
         with open('policy.json') as policy_file:
                 policy=json.load(policy_file)
                 for subService in policy['services']:
