@@ -1,7 +1,7 @@
 {
         "services":[
       {
-                   "name": "dns",
+           "name": "dns",
            "status": "active",
            "image_src": "coredns/coredns",
            "docker-compose_config": "https://raw.githubusercontent.com/devendrasinghrawat/misc/master/hackathon/core-dns/dns.tar",
@@ -9,14 +9,14 @@
       },
       {
            "name": "security",
-                   "status": "inactive",
+            "status": "inactive",
            "image_src": "homeassistant/home-assistant",
            "docker-compose_config": "https://raw.githubusercontent.com/devendrasinghrawat/misc/master/hackathon/openhab/security.tar",
            "docker-compose_start_params": "optional"
       },
       {
            "name": "faas",
-                   "status": "inactive",
+            "status": "inactive",
            "image_src": "ubuntu",
            "docker-compose_config": "https://raw.githubusercontent.com/devendrasinghrawat/misc/master/hackathon/faas/faas.tar",
            "docker-compose_start_params": "optional"
