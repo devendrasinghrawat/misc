@@ -45,7 +45,7 @@ def create(subServiceName):
 
                 print(data)
 
-                return data[2]
+                return "Create Success"
 
 @app.route('/subservice/<subServiceName>', methods=['DELETE'])
 def delete(subServiceName):
@@ -54,7 +54,7 @@ def delete(subServiceName):
         cmd = 'rm -rf ' + basePath + subServiceName
         subprocess.call(cmd,shell=True)
 
-        return "delete"
+        return "Delete Success"
 
 @app.route('/subservice/<subServiceName>', methods=['PUT'])
 def updated(subServiceName):

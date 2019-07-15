@@ -5,6 +5,8 @@ services:
   image: coredns/coredns
   ports:
    - '53:53/udp'  
+  volumes:
+   - Corefile:/etc/coredns/Corefile
   restart: always
   privileged: true
   cpu_count: 1

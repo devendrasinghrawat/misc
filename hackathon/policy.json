@@ -1,17 +1,24 @@
 {
         "services":[
       {
-           "name": "dns",
+                   "name": "dns",
            "status": "active",
-           "image_src": "XXXXXXXXXXXXXXXXX",
-           "docker-compose_config": "json format file, convert to yaml at runtime",
+           "image_src": "coredns/coredns",
+           "docker-compose_config": "https://raw.githubusercontent.com/devendrasinghrawat/misc/master/hackathon/core-dns/dns.tar",
            "docker-compose_start_params": "optional"
       },
       {
            "name": "security",
-           "status": "inactive",
-           "image_src": "YYYYYYYYYYYYYYYYYYYYYYYYY",
-           "docker-compose_config": "json format file, convert to yaml at runtime",
+                   "status": "inactive",
+           "image_src": "homeassistant/home-assistant",
+           "docker-compose_config": "https://raw.githubusercontent.com/devendrasinghrawat/misc/master/hackathon/openhab/security.tar",
+           "docker-compose_start_params": "optional"
+      },
+      {
+           "name": "faas",
+                   "status": "inactive",
+           "image_src": "ubuntu",
+           "docker-compose_config": "https://raw.githubusercontent.com/devendrasinghrawat/misc/master/hackathon/faas/faas.tar",
            "docker-compose_start_params": "optional"
       }]
 }
