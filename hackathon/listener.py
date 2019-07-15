@@ -19,7 +19,7 @@ def get(subServiceName):
 
 @app.route('/subservice/<subServiceName>', methods=['POST'])
 def create(subServiceName):
-		data = [];
+        data = [];
         with open('policy.json') as policy_file:
                 policy=json.load(policy_file)
                 for subService in policy['services']:
@@ -36,7 +36,9 @@ def create(subServiceName):
                                 print(servicedir)
                                 cmd = 'wget ' + data[2]
                                 subprocess.call(cmd,shell=True)
-                                cmd = 'mv ' + basePath+ 'docker-compose.yml ' + servicedir
+                                #cmd = 'mv ' + basePath+ 'docker-compose.yml ' + servicedir
+                                #subprocess.call(cmd,shell=True)
+                                cmd = 'tar -C ' +  servicedir + ' -xvf ' + servicedir + '.tar'
                                 subprocess.call(cmd,shell=True)
                                 cmd = 'docker pull ' + data[1]
                                 subprocess.call(cmd,shell=True)
@@ -52,6 +54,8 @@ def delete(subServiceName):
         cmd = 'docker-compose -f ' + basePath + subServiceName + '/docker-compose.yml down'
         subprocess.call(cmd,shell=True)
         cmd = 'rm -rf ' + basePath + subServiceName
+        subprocess.call(cmd,shell=True)
+        cmd = 'rm -rf ' + basePath + subServiceName+'.tar'
         subprocess.call(cmd,shell=True)
 
         return "Delete Success"
