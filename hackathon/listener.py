@@ -6,7 +6,6 @@ import subprocess
 app = Flask(__name__)
 #api = Api(app)
 basePath = '/var/edge/'
-data = [];
 
 @app.route('/')
 def base():
@@ -20,6 +19,7 @@ def get(subServiceName):
 
 @app.route('/subservice/<subServiceName>', methods=['POST'])
 def create(subServiceName):
+		data = [];
         with open('policy.json') as policy_file:
                 policy=json.load(policy_file)
                 for subService in policy['services']:
@@ -49,6 +49,11 @@ def create(subServiceName):
 
 @app.route('/subservice/<subServiceName>', methods=['DELETE'])
 def delete(subServiceName):
+        cmd = 'docker-compose -f ' + basePath + subServiceName + '/docker-compose.yml down'
+        subprocess.call(cmd,shell=True)
+        cmd = 'rm -rf ' + basePath + subServiceName
+        subprocess.call(cmd,shell=True)
+
         return "delete"
 
 @app.route('/subservice/<subServiceName>', methods=['PUT'])
