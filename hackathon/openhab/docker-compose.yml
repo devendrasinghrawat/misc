@@ -2,7 +2,7 @@ version: '2.4'
 services:
  app:
   container_name: home-assistant
-  image: homeassistant/home-assistant
+  image: homeassistant/armhf-homeassistant
   ports:
    - '1560:8123'
   volumes:
