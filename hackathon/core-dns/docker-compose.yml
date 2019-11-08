@@ -9,11 +9,6 @@ services:
    - ./Corefile:/etc/coredns/Corefile
   restart: always
   privileged: true
-  cpu_count: 1
-  cpu_percent: 20
-  cpus: 0.1
-  mem_limit: 1000000000
-  mem_reservation: 200m
   entrypoint: 
    - '/coredns'
    - '-conf'
